@@ -1,0 +1,29 @@
+PUT _template/covid
+{
+  "order": 0,
+  "index_patterns": [
+    "covid"
+  ],
+  "settings": {
+    "number_of_replicas":0
+  },
+  "mappings": {
+    "properties":{
+      "Location": {
+        "type": "geo_point"
+      },
+      "Confirmed":{
+        "type": "double"
+      },
+      "Deaths": {
+        "type": "double"
+      },
+      "LastUpdate": {
+        "type": "date"
+      },
+      "Recovered": {
+        "type": "double"
+      }
+    }
+  }
+}
